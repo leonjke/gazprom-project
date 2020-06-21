@@ -1,0 +1,68 @@
+@import "../../assets/styles/constants";
+
+.idea {
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  &:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 886px;
+    height: 886px;
+    background: url(../../assets/images/Main/logo-big.png) center center
+      no-repeat;
+  }
+
+  &__wrap {
+    width: 1500px;
+    height: 800px;
+    display: flex;
+    position: relative;
+    z-index: 1;
+
+    &:after {
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: 100%;
+      background-color: $white;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+
+  &__left,
+  &__right {
+    background-color: rgba($azure, 0.7);
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+    color: $white;
+    transition: all $default-transition-duration $default-transition-function;
+
+    &:hover {
+      background-color: $azure;
+    }
+  }
+
+  &__left {
+    border-radius: 8px 0 0 8px;
+  }
+
+  &__right {
+    border-radius: 0 8px 8px 0;
+  }
+
+  &__name {
+    margin-top: 40px;
+  }
+}

@@ -1,0 +1,315 @@
+@import "../../assets/styles/constants";
+
+.puzzle {
+  padding-top: 108px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  &__wrap {
+    width: 1085px;
+    height: 785px;
+    position: relative;
+  }
+
+  &__item {
+    position: absolute;
+    transition: all $default-transition-duration $default-transition-duration;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    cursor: pointer;
+
+    svg {
+      cursor: pointer;
+    }
+
+    p {
+      margin-top: 12px;
+      color: $white;
+      text-align: center;
+      position: relative;
+
+      & + p {
+        margin-top: 0;
+      }
+
+      &:after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 2px;
+        background-color: $white;
+        left: 0;
+        bottom: -2px;
+        transition: all $default-transition-duration
+          $default-transition-duration;
+      }
+    }
+
+    &:hover {
+      p {
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+
+    &_left-top {
+      background: url(../../assets/images/Puzzle/left-top.png) center center
+        no-repeat;
+      width: 248px;
+      height: 222px;
+      top: 0;
+      left: 0;
+      padding-right: 30px;
+      padding-bottom: 30px;
+
+      &.active {
+        top: 66px;
+        left: 335px;
+      }
+    }
+    &_left-center {
+      background: url(../../assets/images/Puzzle/left-center.png) center center
+        no-repeat;
+      width: 265px;
+      height: 315px;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      padding-right: 30px;
+
+      &.active {
+        top: -14px;
+        left: 335px;
+      }
+    }
+    &_left-bottom {
+      background: url(../../assets/images/Puzzle/left-bottom.png) center center
+        no-repeat;
+      width: 249px;
+      height: 229px;
+      bottom: 0;
+      left: 0;
+      padding-right: 30px;
+      padding-top: 30px;
+
+      &.active {
+        bottom: 66px;
+        left: 335px;
+      }
+    }
+    &_right-top {
+      background: url(../../assets/images/Puzzle/right-top.png) center center
+        no-repeat;
+      width: 215px;
+      height: 237px;
+      top: 0;
+      right: 0;
+      padding-left: 30px;
+      padding-bottom: 30px;
+
+      &.active {
+        top: 66px;
+        right: 335px;
+      }
+    }
+    &_right-center {
+      background: url(../../assets/images/Puzzle/right-center.png) center center
+        no-repeat;
+      width: 213px;
+      height: 270px;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      padding-left: 50px;
+
+      &.active {
+        top: -18px;
+        right: 335px;
+      }
+    }
+    &_right-bottom {
+      background: url(../../assets/images/Puzzle/right-bottom.png) center center
+        no-repeat;
+      width: 218px;
+      height: 249px;
+      bottom: 0;
+      right: 0;
+      padding-left: 30px;
+      padding-top: 30px;
+
+      &.active {
+        bottom: 66px;
+        right: 335px;
+      }
+    }
+  }
+
+  &__pseudo {
+    position: absolute;
+    opacity: 0.1;
+    width: 415px;
+    height: 653px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    .puzzle__item {
+      &_left-center {
+        top: -14px;
+      }
+
+      &_right-center {
+        top: -18px;
+      }
+    }
+  }
+
+  &__modal {
+    width: 850px;
+    height: auto;
+    background: $azure url(../../assets/images/Main/logo-big.png) 65px 270px
+      no-repeat;
+    position: relative;
+
+    &-save {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 34px;
+    }
+
+    &-checklist {
+      position: relative;
+      padding-top: 125px;
+
+      &:before {
+        position: absolute;
+        content: "";
+        background: url(../../assets/images/Idea/lamp.png) center center
+          no-repeat;
+        background-size: contain;
+        width: 57px;
+        height: 95px;
+        top: 10px;
+        right: 10px;
+      }
+
+      &-line {
+        width: 260px;
+        padding: 10px;
+        display: flex;
+
+        &.active {
+          background-color: rgba($white, 0.5);
+        }
+      }
+
+      &-label {
+        line-height: 24px;
+        border: 1px solid $white;
+        border-radius: 2px;
+        margin-left: 16px;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        background-color: $azure;
+        padding-left: 4px;
+      }
+
+      &-text {
+        font-size: 12px;
+        margin-left: 4px;
+        color: $white;
+      }
+
+      &-checkbox {
+        flex: 0 0 24px;
+        width: 24px;
+        height: 24px;
+        border: 1px solid $white;
+        border-radius: 2px;
+        position: relative;
+
+        &:after {
+          position: absolute;
+          content: "";
+          width: 12px;
+          height: 6px;
+          border: 3px solid $white;
+          border-right: none;
+          border-top: none;
+          left: 0;
+          right: 0;
+          top: 4px;
+          margin: 0 auto;
+          transform: rotate(-45deg);
+          opacity: 0;
+        }
+
+        &.active {
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+
+      svg {
+        cursor: pointer;
+      }
+    }
+
+    &-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 34px 10px;
+    }
+
+    &-form {
+      flex: 0 0 470px;
+
+      &-line {
+        padding: 10px;
+
+        &.active {
+          background-color: rgba($white, 0.5);
+        }
+      }
+
+      &-label {
+        display: flex;
+        margin-bottom: 12px;
+
+        &-icon {
+          margin-right: 10px;
+        }
+
+        h3 {
+          color: $white;
+        }
+      }
+
+      &-input {
+        padding-left: 34px;
+      }
+    }
+  }
+}

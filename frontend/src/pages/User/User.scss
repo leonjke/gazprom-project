@@ -1,0 +1,39 @@
+.modal {
+  &__wrap {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    padding-left: 40px;
+  }
+
+  &__avatar {
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 300px;
+
+    &-save {
+      margin-top: 20px;
+    }
+  }
+
+  &__settings {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 540px;
+    width: 1000px;
+    margin-bottom: -20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    &-item {
+      width: 460px;
+      margin-bottom: 20px;
+    }
+  }
+}

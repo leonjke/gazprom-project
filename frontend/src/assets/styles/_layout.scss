@@ -1,0 +1,23 @@
+.wrapper {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+
+  &:after {
+    position: absolute;
+    content: "";
+    background: url(../images/blue-logo.svg) center center no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 43px;
+    top: 30px;
+    right: 30px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
