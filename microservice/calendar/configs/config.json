@@ -1,0 +1,5 @@
+{
+  "httpListen": ":8080",
+  "logFile": "../logs/log.txt",
+  "logLevel": "info"
+}
